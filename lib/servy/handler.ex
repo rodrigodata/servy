@@ -19,19 +19,19 @@ defmodule Servy.Handler do
     end
 
     def route(conv) do 
-        # TODO: Create a new map that also has the response body
         # conv means conversation between the browser and our server
-        conv = %{ method: "GET", path: "/wildthings", resp_body: "Bears, Lions, Tigers" }
+        # we only can assing a new value to the key resp_body beceause it already exists. If we tried to assing conv a new key, the compiler wont let us do it.        
+        %{ conv | resp_body: "Bears, Lions, Tigers"}
     end
 
     def format_response(conv) do
-        # TODO: Use values in the map to create an HTTP response string
+        # TODO: Use values in the map to create an HTTP response string        
         """
         HTTP/1.1 200 OK
         Content-Type: text/html
-        Content-Length: 20
+        Content-Length: #{String.length(conv.resp_body)}
         
-        Bears, Lions, Tigers
+        #{conv.resp_body}
         """
     end
 
