@@ -19,7 +19,7 @@ defmodule Servy.Handler do
     end
 
     def route(conv) do 
-        # conv means conversation between the browser and our server
+        # conv means conversation between the browser and our server.
         # we only can assing a new value to the key resp_body beceause it already exists. If we tried to assing conv a new key, the compiler wont let us do it.        
         %{ conv | resp_body: "Bears, Lions, Tigers"}
     end
