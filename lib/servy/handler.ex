@@ -24,8 +24,7 @@ defmodule Servy.Handler do
         %{ conv | resp_body: "Bears, Lions, Tigers"}
     end
 
-    def format_response(conv) do
-        # TODO: Use values in the map to create an HTTP response string        
+    def format_response(conv) do        
         """
         HTTP/1.1 200 OK
         Content-Type: text/html
